@@ -1,0 +1,12 @@
+# Python environment
+venv/
+__pycache__/
+*.pyc
+
+# Local Data & Databases (Don't push these!)
+my_chroma_db/
+data/
+.env
+
+# Streamlit folders
+.streamlit/
