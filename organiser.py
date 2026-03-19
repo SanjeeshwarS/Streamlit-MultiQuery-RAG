@@ -36,18 +36,6 @@ try:
     response = ollama.generate(model = model, prompt= prompt)
     model_response = response.get("response", "No Response")
 
-    """{ The Response Produced  by the model will be in this nested Dictonary format 
-
-            "model": "llama3.2",
-            "created_at": "2026-03-18T10:30:00Z",
-            "message": {
-            "role": "assistant",
-            "content": "Sure, here is your categorized grocery list!..."
-        },
-            "done": True,
-            "total_duration": 450394000
-        }"""
-
     print("======== Categorised Grocery List ========")
     print(model_response)
 
@@ -59,45 +47,3 @@ try:
 
 except Exception as e:
     print(f"Error: {e}")
-
-
-
-
-"""# Open the image file in binary read mode ('rb')
-with open("crowd_image.jpg", "rb") as file:
-    response = ollama.chat(
-        model="llava", 
-        messages=[{
-            "role": "user",
-            "content": "Analyze this crowd image and estimate the male-to-female ratio. Do you see more men or women?",
-            "images": [file.read()] # Pass the image data here
-        }]
-    )
-
-print(response['message']['content'])"""
-
-
-"""
-import ollama
-
-response = ollama.generate(
-    model="llama3.2",
-    prompt="Write a simple C function that uses pointers to swap two variables."
-)
-
-print(response['response'])
-
-"""
-
-"""
-import ollama
-
-messages = [
-    {"role": "user", "content": "Can you explain the core concepts of Object Oriented Programming for my exam?"}
-]
-
-response = ollama.chat(model="llama3.2", messages=messages)
-
-print(response['message']['content'])
-
-"""
